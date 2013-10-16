@@ -126,7 +126,7 @@ rm -rf $REPACK/ota/system/etc/recovery-resource.dat
 
 # Strip modules
 [ -d $REPACK/ota/system/lib/modules ] && \
-	find $REPACK/ota/system/lib/modules -name "*.ko" -print0 | xargs -0 $ANDROID_BUILD_TOP/prebuilts/gcc/linux-x86/arm/arm-eabi-4.7.4/bin/arm-eabi-strip --strip-unneeded
+	find $REPACK/ota/system/lib/modules -name "*.ko" -print0 | xargs -0 $ANDROID_BUILD_TOP/prebuilts/gcc/linux-x86/arm/linaro-4.7/bin/arm-eabi-strip --strip-unneeded
 
 # Fix LCD Density for slim
 DEVICELCD=`sed -n -e'/ro\.sf\.lcd_density/s/^.*=//p' $OUT/system/build.prop`
