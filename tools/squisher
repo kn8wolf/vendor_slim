@@ -40,7 +40,6 @@ fi
 OPTICHARGER=$ANDROID_BUILD_TOP/vendor/slim/tools/opticharger
 QUIET=-q
 DELETE_BINS="applypatch applypatch_static check_prereq recovery updater"
-DELETE_MEDIA="*.qmg"
 DELETE_APKS="Launcher2.apk LiveWallpapers.apk VoiceDialer.apk SpeechRecorder.apk VideoEditor.apk Exchange2.apk HoloSpiralWallpaper.apk MagicSmokeWallpapers.apk NoiseField.apk Galaxy4.apk Calendar.apk OpenWnn.apk PinyinIME.apk QuickSearchBox.apk Email.apk"
 DELETE_GALLERY="Gallery2.apk"
 DELETE_FONTS="MTLmr3m.ttf"
@@ -89,9 +88,6 @@ $SED -i \
 
 # Delete unnecessary binaries
 ( cd $REPACK/ota/system/bin; echo $DELETE_BINS | xargs rm -f; )
-
-# Delete Offline charging mode files
-( cd $REPACK/ota/system/media; echo $DELETE_MEDIA | xargs rm -f; )
 
 # Delete Home Apk
 ( cd $REPACK/ota/system/app; echo $DELETE_APKS | xargs rm -f; )
