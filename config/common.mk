@@ -58,10 +58,6 @@ PRODUCT_COPY_FILES += \
     vendor/slim/prebuilt/common/etc/init.d/90userinit:system/etc/init.d/90userinit \
     vendor/slim/prebuilt/common/bin/sysinit:system/bin/sysinit
 
-# Workaround for NovaLauncher zipalign fails
-PRODUCT_COPY_FILES += \
-    vendor/slim/prebuilt/common/app/NovaLauncher.apk:system/app/NovaLauncher.apk
-
 # Embed SuperUser
 SUPERUSER_EMBEDDED := true
 
@@ -80,7 +76,8 @@ PRODUCT_PACKAGES += \
     NoiseField \
     Galaxy4 \
     LiveWallpapersPicker \
-    PhaseBeam
+    PhaseBeam \
+    Launcher3
 
 # DSPManager
 PRODUCT_PACKAGES += \
