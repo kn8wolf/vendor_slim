@@ -4,6 +4,8 @@
 # cyanogen
 #
 
+. $ANDROID_BUILD_TOP/vendor/slim/tools/colors
+
 OUT_TARGET_HOST=`uname -a | grep Darwin`
 if [ -z "$OUT_TARGET_HOST" ]
 then
@@ -19,7 +21,7 @@ else
 fi
 
 if [ -z "$OUT" -o ! -d "$OUT" ]; then
-    echo "ERROR: $0 only works with a full build environment. $OUT should exist."
+    echo $CL_RED"ERROR: $0 only works with a full build environment. $OUT should exist."$CL_RST
     exit 1
 fi
 
@@ -33,7 +35,7 @@ else
     OTAPACKAGE=$OUT/$TARGET_PRODUCT-ota-$TARGET_BUILD_VARIANT.$USER.zip
 fi
 if [ ! -f "$OTAPACKAGE" ]; then
-    echo "$OTAPACKAGE doesn't exist!";
+    echo $CL_RED"$OTAPACKAGE doesn't exist!";$CL_RST
     exit 1
 fi
 
@@ -45,19 +47,16 @@ DELETE_GALLERY="Gallery2.apk"
 DELETE_FONTS="MTLmr3m.ttf"
 
 REPACK=$OUT/repack.d
-printf "Sanitizing environment..."
+echo $CL_BLU"Sanitizing environment..."$CL_RST
 rm -rf $REPACK
 mkdir -p $REPACK
-echo
-
 
 # Unpack the otapackage and opticharge all apks
 mkdir $REPACK/ota
 (
 cd $REPACK/ota
-printf "Unpacking $OTAPACKAGE..."
+echo $CL_BLU"Unpacking $OTAPACKAGE..."$CL_RST
 unzip $QUIET $OTAPACKAGE
-echo
 
 # Move all apks to the same directory so xargs can
 # use also with framework-res.apk. This allow process
@@ -167,31 +166,43 @@ fi
 # Determine what to name the new signed package
 MODVERSION=`sed -n -e'/ro\.modversion/s/^.*=//p' $REPACK/ota/system/build.prop`
 OUTFILE=$OUT/$MODVERSION.zip
-echo MODVERSION: $MODVERSION
 
 # Pack it up and sign
-printf "Zipping package..."
+echo $CL_BLU"Zipping package..."$CL_RST
 ( cd $REPACK/ota; zip $QUIET -r $REPACK/update.zip . )
-echo
-printf "Signing package..."
+
+echo $CL_BLU"Signing package..."$CL_RST
+
 SECURITYDIR=$ANDROID_BUILD_TOP/build/target/product/security
 java -Xmx1024m \
 	-jar $OUT/../../../host/$OUT_TARGET_HOST/framework/signapk.jar \
 	-w $SECURITYDIR/testkey.x509.pem $SECURITYDIR/testkey.pk8 \
 	$REPACK/update.zip $OUTFILE
-echo
-printf "Cleaning up..."
+
+echo $CL_BLU"Cleaning up..."$CL_RST
 rm -rf $REPACK
-echo
 
 # Create a md5 checksum image of the repacked package
 (
 img=`basename $OUTFILE`
 cd `dirname $OUTFILE`
 $MD5 $img >$img.md5sum
+ZIPSIZE=`ls -lah $OUTFILE | awk '{ print $5}' `
 echo
-echo "Package complete: $OUTFILE"
-cat $img.md5sum
+echo $CL_YLW" (                 (                         "
+echo " )\ ) (            )\ )         )            "
+echo "(()/( )\(     )   (()/(    ) ( /(    (  (    "
+echo " /(_)|(_)\   (     /(_))( /( )\())  ))\ )(   "
+echo "(_))  _((_)  )\  '(_))  )(_)|(_)\  /((_|()\  "
+echo "/ __|| |(_)_((_)) / __|((_)_| |(_)(_))  ((_) "
+echo "\__ \| || | '  \()\__ \/ _' | '_ \/ -_)| '_| "
+echo "|___/|_||_|_|_|_| |___/\__,_|_.__/\___||_|   "
+echo
+echo $CL_CYN"===========-Package complete-==========="$CL_RST
+echo $CL_CYN"zip :"$CL_MAG" $OUTFILE"$CL_RST
+echo $CL_CYN"md5 :"$CL_MAG" $(cat $img.md5sum | awk '{ print $1 }')"$CL_RST
+echo $CL_CYN"size:"$CL_MAG" $ZIPSIZE"$CL_RST
+echo $CL_CYN"========================================"$CL_RST
 echo
 )
 
