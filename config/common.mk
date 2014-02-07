@@ -93,6 +93,10 @@ PRODUCT_PACKAGES += \
     mke2fs \
     tune2fs
 
+#OmniRom Packages
+PRODUCT_PACKAGES += \
+    OmniSwitch
+
 # easy way to extend to add more packages
 -include vendor/extra/product.mk
 
