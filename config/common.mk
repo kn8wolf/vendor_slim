@@ -92,8 +92,10 @@ PRODUCT_PACKAGES += \
 # DSPManager
 PRODUCT_PACKAGES += \
     DSPManager \
-    libcyanogen-dsp \
-    audio_effects.conf
+    libcyanogen-dsp
+
+PRODUCT_COPY_FILES += \
+    packages/apps/DSPManager/cyanogen-dsp/audio_effects.conf:system/etc/audio_effects.conf
 
 # Extra Optional packages
 PRODUCT_PACKAGES += \
