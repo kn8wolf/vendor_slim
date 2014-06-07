@@ -40,6 +40,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/slim/prebuilt/common/lib/libjni_latinime.so:system/lib/libjni_latinime.so
 
+# Copy libgif for Nova Launcher 3.0
+PRODUCT_COPY_FILES += \
+    vendor/slim/prebuilt/common/lib/libgif.so:system/lib/libgif.so
+
 # SELinux filesystem labels
 PRODUCT_COPY_FILES += \
     vendor/slim/prebuilt/common/etc/init.d/50selinuxrelabel:system/etc/init.d/50selinuxrelabel
@@ -151,9 +155,9 @@ endif
 
 # Versioning System
 # KitKat SlimKat freeze code
-PRODUCT_VERSION_MAJOR = 4.4.2
+PRODUCT_VERSION_MAJOR = 4.4.3
 PRODUCT_VERSION_MINOR = build
-PRODUCT_VERSION_MAINTENANCE = 5.6
+PRODUCT_VERSION_MAINTENANCE = 5.7
 ifdef SLIM_BUILD_EXTRA
     SLIM_POSTFIX := -$(SLIM_BUILD_EXTRA)
 endif
