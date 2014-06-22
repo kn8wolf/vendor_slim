@@ -23,6 +23,7 @@ add_lunch_combo slim_i9100-userdebug
 add_lunch_combo slim_i9100g-userdebug
 add_lunch_combo slim_i925-userdebug
 add_lunch_combo slim_i9300-userdebug
+add_lunch_combo slim_i9500-userdebug
 add_lunch_combo slim_jflte-userdebug
 add_lunch_combo slim_ls980-userdebug
 add_lunch_combo slim_m7-userdebug
@@ -56,4 +57,4 @@ add_lunch_combo slim_vs980-userdebug
 add_lunch_combo slim_xt925-userdebug
 add_lunch_combo slim_xt926-userdebug
 add_lunch_combo slim_yuga-userdebug
-
+add_lunch_combo slim_pyramid-userdebug
