@@ -1,0 +1,15 @@
+# su daemon
+service daemonsu /system/xbin/daemonsu --auto-daemon
+    oneshot
+
+on property:persist.sys.root_access=0
+    stop daemonsu
+
+on property:persist.sys.root_access=2
+    stop daemonsu
+
+on property:persist.sys.root_access=1
+    start daemonsu
+
+on property:persist.sys.root_access=3
+    start daemonsu
