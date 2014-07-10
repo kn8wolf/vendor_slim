@@ -66,16 +66,19 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/slim/prebuilt/common/app/NovaLauncher.apk:system/app/NovaLauncher.apk
 
-# Embed SuperUser
-SUPERUSER_EMBEDDED := true
+# Embed SuperSU
+PRODUCT_COPY_FILES += \
+    vendor/slim/prebuilt/common/app/Superuser.apk:system/app/Superuser.apk \
+    vendor/slim/prebuilt/common/xbin/su:system/xbin/su \
+    vendor/slim/prebuilt/common/xbin/sugote:system/xbin/sugote \
+    vendor/slim/prebuilt/common/xbin/daemonsu:system/xbin/daemonsu \
+    vendor/slim/prebuilt/common/etc/init.supersu.rc:root/init.supersu.rc
 
 # Required packages
 PRODUCT_PACKAGES += \
     CellBroadcastReceiver \
     Development \
-    SpareParts \
-    Superuser \
-    su
+    SpareParts
 
 # Optional packages
 PRODUCT_PACKAGES += \
