@@ -97,11 +97,9 @@ PRODUCT_PACKAGES += \
 
 # Extra Optional packages
 PRODUCT_PACKAGES += \
-    DashClock \
     SlimFileManager \
     SlimCenter \
     LatinIME \
-    SlimIRC \
     BluetoothExt
 
 # Extra tools
