@@ -77,6 +77,7 @@ PRODUCT_COPY_FILES += \
 # Required packages
 PRODUCT_PACKAGES += \
     Camera \
+    CellBroadcastReceiver \
     Development \
     SpareParts
 
