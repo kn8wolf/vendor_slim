@@ -110,7 +110,12 @@ PRODUCT_PACKAGES += \
     openvpn \
     e2fsck \
     mke2fs \
-    tune2fs
+    tune2fs \
+    mount.exfat \
+    fsck.exfat \
+    mkfs.exfat \
+    ntfsfix \
+    ntfs-3g
 
 PRODUCT_PACKAGE_OVERLAYS += vendor/slim/overlay/common
 
