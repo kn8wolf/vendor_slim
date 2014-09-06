@@ -107,7 +107,8 @@ PRODUCT_PACKAGES += \
     SlimCenter \
     SlimFileManager \
     LatinIME \
-    BluetoothExt
+    BluetoothExt \
+    DashClock
 
 # Extra tools
 PRODUCT_PACKAGES += \
