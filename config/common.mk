@@ -58,6 +58,10 @@ PRODUCT_COPY_FILES += \
     vendor/slim/prebuilt/common/etc/init.d/90userinit:system/etc/init.d/90userinit \
     vendor/slim/prebuilt/common/bin/sysinit:system/bin/sysinit
 
+# Simple File Explorer prebuilt apk instead of SlimFileManager
+PRODUCT_COPY_FILES += \
+    vendor/slim/prebuilt/common/app/SimpleExplorer.apk:system/app/SimpleExplorer.apk
+
 # Embed SuperUser
 SUPERUSER_EMBEDDED := true
 
