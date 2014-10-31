@@ -1,6 +1,6 @@
 # Extras
 
-import /init.supersu.rc
+import /init.superuser.rc
 
 on init
     export TERMINFO /system/etc/terminfo

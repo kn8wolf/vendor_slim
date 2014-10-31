@@ -58,19 +58,16 @@ PRODUCT_COPY_FILES += \
     vendor/slim/prebuilt/common/etc/init.d/90userinit:system/etc/init.d/90userinit \
     vendor/slim/prebuilt/common/bin/sysinit:system/bin/sysinit
 
-# Embed SuperSU
-PRODUCT_COPY_FILES += \
-    vendor/slim/prebuilt/common/app/Superuser.apk:system/app/Superuser.apk \
-    vendor/slim/prebuilt/common/xbin/su:system/xbin/su \
-    vendor/slim/prebuilt/common/xbin/sugote:system/xbin/sugote \
-    vendor/slim/prebuilt/common/xbin/daemonsu:system/xbin/daemonsu \
-    vendor/slim/prebuilt/common/etc/init.supersu.rc:root/init.supersu.rc
+# Embed SuperUser
+SUPERUSER_EMBEDDED := true
 
 # Required packages
 PRODUCT_PACKAGES += \
     CellBroadcastReceiver \
     Development \
-    SpareParts
+    SpareParts \
+    Superuser \
+    su
 
 # Optional packages
 PRODUCT_PACKAGES += \
