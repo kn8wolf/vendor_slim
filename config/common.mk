@@ -81,15 +81,13 @@ PRODUCT_PACKAGES += \
 # DSPManager
 PRODUCT_PACKAGES += \
     DSPManager \
-    libcyanogen-dsp
+    libcyanogen-dsp \
+    audio_effects.conf
 
 # Chromium Prebuilt
 ifeq ($(PRODUCT_PREBUILT_WEBVIEWCHROMIUM),yes)
 -include prebuilts/chromium/$(TARGET_DEVICE)/chromium_prebuilt.mk
 endif
-
-PRODUCT_COPY_FILES += \
-    packages/apps/DSPManager/cyanogen-dsp/audio_effects.conf:system/etc/audio_effects.conf
 
 # Extra Optional packages
 PRODUCT_PACKAGES += \
