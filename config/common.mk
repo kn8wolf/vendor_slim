@@ -124,6 +124,11 @@ PRODUCT_PACKAGES += \
     libjni_mosaic \
     SimpleExplorer
 
+# Screen recorder package and lib
+PRODUCT_PACKAGES += \
+    ScreenRecorder \
+    libscreenrecorder
+
 # easy way to extend to add more packages
 -include vendor/extra/product.mk
 
