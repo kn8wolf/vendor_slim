@@ -62,6 +62,11 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/slim/prebuilt/common/app/SimpleExplorer.apk:system/app/SimpleExplorer.apk
 
+# Screen recorder package and lib
+PRODUCT_PACKAGES += \
+    ScreenRecorder \
+    libscreenrecorder
+
 # Embed SuperUser
 SUPERUSER_EMBEDDED := true
 
