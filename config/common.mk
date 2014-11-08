@@ -101,7 +101,6 @@ endif
 # Extra Optional packages
 PRODUCT_PACKAGES += \
     SlimCenter \
-    SlimFileManager \
     SlimLauncher \
     LatinIME \
     BluetoothExt \
