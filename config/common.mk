@@ -163,8 +163,13 @@ $(eval TARGET_BOOTANIMATION_NAME := $(shell \
 endef
 $(foreach size,$(bootanimation_sizes), $(call check_and_set_bootanimation,$(size)))
 
+ifeq ($(PRODUCT_BOOTANIMATION),)
 PRODUCT_COPY_FILES += \
     vendor/slim/prebuilt/common/bootanimation/$(TARGET_BOOTANIMATION_NAME).zip:system/media/bootanimation.zip
+else
+PRODUCT_COPY_FILES += \
+    $(PRODUCT_BOOTANIMATION):system/media/bootanimation.zip
+endif
 endif
 
 # Versioning System
