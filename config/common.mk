@@ -103,7 +103,10 @@ PRODUCT_PACKAGES += \
     fsck.exfat \
     mkfs.exfat \
     ntfsfix \
-    ntfs-3g
+    ntfs-3g \
+    mkfs.f2fs \
+    fsck.f2fs \
+    fibmap.f2fs
 
 # Stagefright FFMPEG plugin
 PRODUCT_PACKAGES += \
