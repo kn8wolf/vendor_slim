@@ -81,7 +81,8 @@ PRODUCT_PACKAGES += \
 
 # Eleven
 PRODUCT_PACKAGES += \
-    Eleven
+    Eleven \
+    AudioFX
 
 # Extra Optional packages
 PRODUCT_PACKAGES += \
