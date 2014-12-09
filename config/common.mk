@@ -79,11 +79,9 @@ PRODUCT_PACKAGES += \
     LiveWallpapersPicker \
     PhaseBeam
 
-# DSPManager
+# Eleven
 PRODUCT_PACKAGES += \
-    DSPManager \
-    libcyanogen-dsp \
-    audio_effects.conf
+    Eleven
 
 # Extra Optional packages
 PRODUCT_PACKAGES += \
