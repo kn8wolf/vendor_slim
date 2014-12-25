@@ -204,4 +204,5 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.slim.buildtype=$(SLIM_BUILD_TYPE)
 
 EXTENDED_POST_PROCESS_PROPS := vendor/slim/tools/slim_process_props.py
+FINISHER_SCRIPT := vendor/slim/tools/finisher
 
