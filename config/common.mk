@@ -118,6 +118,11 @@ PRODUCT_PACKAGES += \
     org.cyanogenmod.hardware \
     org.cyanogenmod.hardware.xml
 
+# Additional prebuilt APKs and libs
+PRODUCT_PACKAGES += \
+    CameraNext \
+    libjni_mosaic
+
 # easy way to extend to add more packages
 -include vendor/extra/product.mk
 
