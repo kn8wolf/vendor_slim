@@ -121,7 +121,8 @@ PRODUCT_PACKAGES += \
 # Additional prebuilt APKs and libs
 PRODUCT_PACKAGES += \
     CameraNext \
-    libjni_mosaic
+    libjni_mosaic \
+    SimpleExplorer
 
 # easy way to extend to add more packages
 -include vendor/extra/product.mk
