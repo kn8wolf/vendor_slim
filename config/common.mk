@@ -120,7 +120,7 @@ PRODUCT_PACKAGES += \
 
 # Additional prebuilt APKs and libs
 PRODUCT_PACKAGES += \
-    CameraNext \
+    CameraNextMod \
     libjni_mosaic \
     SimpleExplorer
 
