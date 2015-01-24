@@ -82,7 +82,6 @@ PRODUCT_PACKAGES += \
 
 # Extra Optional packages
 PRODUCT_PACKAGES += \
-    SlimCenter \
     SlimLauncher \
     LatinIME \
     BluetoothExt \
@@ -121,8 +120,7 @@ PRODUCT_PACKAGES += \
 # Additional prebuilt APKs and libs
 PRODUCT_PACKAGES += \
     CameraNextMod \
-    libjni_mosaic \
-    SimpleExplorer
+    libjni_mosaic
 
 # Screen recorder package and lib
 PRODUCT_PACKAGES += \
