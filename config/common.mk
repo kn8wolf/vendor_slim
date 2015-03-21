@@ -118,11 +118,6 @@ PRODUCT_PACKAGES += \
     org.cyanogenmod.hardware \
     org.cyanogenmod.hardware.xml
 
-# Additional prebuilt APKs and libs
-PRODUCT_PACKAGES += \
-    CameraNextMod \
-    libjni_mosaic
-
 # Screen recorder package and lib
 PRODUCT_PACKAGES += \
     ScreenRecorder \
