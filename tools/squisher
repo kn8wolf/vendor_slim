@@ -199,6 +199,13 @@ java -Xmx1024m \
 echo $CL_BLU"Cleaning up..."$CL_RST
 rm -rf $REPACK
 
+if [ ! -z "$IS_RELEASED_BUILD" ]; then
+   BUILD_PROP=$OUT/system/build.prop
+   LAST_BUILD_PROP=$ANDROID_BUILD_TOP/last_build.prop
+   echo $CL_CYN"Copying '${BUILD_PROP}' to '${LAST_BUILD_PROP}'"$CL_RST
+   cp $BUILD_PROP $LAST_BUILD_PROP
+fi
+
 # Create a md5 checksum image of the repacked package
 (
 img=`basename $OUTFILE`
