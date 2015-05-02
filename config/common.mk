@@ -86,7 +86,7 @@ PRODUCT_PACKAGES += \
     LatinIME \
     BluetoothExt \
     LockClock \
-    SlimCenter \
+    SlimOTA \
     KernelAdiutor
 
 #    SlimFileManager removed until updated
