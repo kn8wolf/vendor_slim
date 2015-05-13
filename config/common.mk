@@ -85,11 +85,9 @@ PRODUCT_PACKAGES += \
 
 # Extra Optional packages
 PRODUCT_PACKAGES += \
-    SlimCenter \
     SlimLauncher \
     LatinIME \
-    BluetoothExt \
-    DashClock
+    BluetoothExt
 
 #    SlimFileManager removed until updated
 
@@ -174,16 +172,6 @@ endif
 ifndef SLIM_BUILD_TYPE
     SLIM_BUILD_TYPE := UNOFFICIAL
     SLIM_POSTFIX := $(shell date +"%Y%m%d")
-endif
-
-# SlimIRC
-# export INCLUDE_SLIMIRC=1 for unofficial builds
-ifneq ($(filter WEEKLY OFFICIAL,$(SLIM_BUILD_TYPE)),)
-    INCLUDE_SLIMIRC = 1
-endif
-
-ifneq ($(INCLUDE_SLIMIRC),)
-    PRODUCT_PACKAGES += SlimIRC
 endif
 
 # Chromium Prebuilt
