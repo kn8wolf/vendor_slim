@@ -79,17 +79,19 @@ PRODUCT_PACKAGES += \
     LiveWallpapersPicker \
     PhaseBeam
 
-# AudioFX
+# Eleven
 PRODUCT_PACKAGES += \
+    Eleven \
     AudioFX
 
 # Extra Optional packages
 PRODUCT_PACKAGES += \
     SlimLauncher \
     LatinIME \
-    BluetoothExt
-
-#    SlimFileManager removed until updated
+    BluetoothExt \
+    LockClock \
+    SlimOTA \
+    KernelAdiutor
 
 # Extra tools
 PRODUCT_PACKAGES += \
