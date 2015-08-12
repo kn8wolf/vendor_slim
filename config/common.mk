@@ -82,7 +82,7 @@ PRODUCT_PACKAGES += \
 # Eleven
 PRODUCT_PACKAGES += \
     Eleven \
-    AudioFX
+    ViPER4Android
 
 # Extra Optional packages
 PRODUCT_PACKAGES += \
