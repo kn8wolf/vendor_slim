@@ -31,4 +31,5 @@ BOARD_SEPOLICY_UNION += \
     uncrypt.te \
     userinit.te \
     vold.te \
+    mediaserver.te \
     mac_permissions.xml
