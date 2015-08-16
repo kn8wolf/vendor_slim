@@ -91,8 +91,7 @@ PRODUCT_PACKAGES += \
     BluetoothExt \
     LockClock \
     SlimOTA \
-    KernelAdiutor \
-    WallpaperPicker
+    KernelAdiutor
 
 # Extra tools
 PRODUCT_PACKAGES += \
