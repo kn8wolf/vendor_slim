@@ -1,6 +1,6 @@
 #
-# This policy configuration will be used by all products that
-# inherit from CM
+# This policy configuration will be used by all products that inherit from 
+# CM
 #
 
 BOARD_SEPOLICY_DIRS += \
@@ -32,5 +32,5 @@ BOARD_SEPOLICY_UNION += \
     uncrypt.te \
     userinit.te \
     vold.te \
-    mediaserver.te \
+    zygote.te \
     mac_permissions.xml
