@@ -60,6 +60,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/slim/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner \
     vendor/slim/prebuilt/common/etc/init.d/90userinit:system/etc/init.d/90userinit \
+    vendor/slim/prebuilt/common/etc/init.d/90userinit:system/etc/init.d/999zzSudHotTunes \
     vendor/slim/prebuilt/common/bin/sysinit:system/bin/sysinit
 
 # Embed SuperUser
@@ -184,18 +185,18 @@ endif
 # SlimLP first version.
 PRODUCT_VERSION_MAJOR = 5.1.1
 PRODUCT_VERSION_MINOR = alpha
-PRODUCT_VERSION_MAINTENANCE = 0.4
+PRODUCT_VERSION_MAINTENANCE = 0.2
 ifdef SLIM_BUILD_EXTRA
     SLIM_POSTFIX := -$(SLIM_BUILD_EXTRA)
 endif
 ifndef SLIM_BUILD_TYPE
-    SLIM_BUILD_TYPE := UNOFFICIAL
+    SLIM_BUILD_TYPE := BREAKFREE
     SLIM_POSTFIX := $(shell date +"%Y%m%d")
 endif
 
 # Set all versions
 SLIM_VERSION := Slim-$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR).$(PRODUCT_VERSION_MAINTENANCE)-$(SLIM_BUILD_TYPE)
-SLIM_MOD_VERSION := SlimSaber-CAF-$(SLIM_BUILD)-$(PRODUCT_VERSION_MAJOR)-$(SLIM_POSTFIX)
+SLIM_MOD_VERSION := SlimSaber-CAF-$(SLIM_BUILD_TYPE)-$(SLIM_BUILD)-$(PRODUCT_VERSION_MAJOR)-$(SLIM_POSTFIX)
 
 PRODUCT_PROPERTY_OVERRIDES += \
     BUILD_DISPLAY_ID=$(BUILD_ID) \
